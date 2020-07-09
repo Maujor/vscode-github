@@ -1,5 +1,5 @@
 # Passo a passo para integrar VSCode ao GitHub
-[Visite o site desse passo a passo](https://maujor.github.io/vscode-github/){:target="_blank"}
+[Visite o site desse passo a passo](https://maujor.github.io/vscode-github/)
 ## Introdução
 
 Uma busca no Google por esse assunto retorna dezenas de tutoriais e vídeos.
