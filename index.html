@@ -1,66 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Integrando o VSCode - GitHub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Integrando o VSCode - GitHub</title>
-  <style rel="stylesheet">
+  <body>
+    <h1 class="topo">Integrando o VSCode ao GitHub</h1>
+    <div class="principal">
+      <h2>Introdução</h2>
+      <p>
+        Uma busca no Google por esse assunto retorna dezenas de tutoriais e
+        vídeos e na grande maioria deles a quantidade de dúvidas que fica no
+        leitor é considerável.
+      </p>
+      <p>
+        As dúvidas em geral devem-se ao fato de que em determinado(s) passo(s) o
+        autor, por ser um expert no assunto, não atenta para o fato de que para
+        ele um detalhe irrelevante não o é para um iniciante.
+      </p>
+      <p>
+        Eu mesmo, quando precisei conhecer esse assunto, apesar de ter
+        consultado vária fontes tive grande dificuldade para aprender e
+        conseguir fazer a integração.
+      </p>
+      <p>
+        Decidi criar esse passo a passo e disponibilizar no GitHub, pois aqui
+        fica bem mais fácil de receber feedback com sugestões e críticas e
+        aperfeiçoá-lo. Sinta-se à vontade para um ou mais "Pull requests".
+      </p>
 
-  </style>
-</head>
+      <h2>Setup inicial</h2>
 
-<body>
-  <h1>Integrando o VSCode ao GitHub</h1>
-  <h2>Introdução</h2>
-  <p>Uma busca no Google por esse assunto retorna dezenas de tutoriais e vídeos e na grande maioria deles a quantidade
-    de dúvidas que fica no leitor é considerável.</p>
-  <p>As dúvidas em geral devem-se ao fato de que em determinado(s) passo(s) o autor, por ser um expert no assunto, não
-    atenta para o fato de que para ele um detalhe irrelevante não o é para um iniciante.</p>
-  <p>Eu mesmo, quando precisei conhecer esse assunto, apesar de ter consultado vária fontes tive grande dificuldade para
-    aprender e conseguir fazer a integração.</p>
-  <p>Decidi criar esse passo a passo e disponibilizar no GitHub, pois aqui fica bem mais fácil de receber feedback com
-    sugestões e críticas e aperfeiçoá-lo. Sinta-se à vontade para um ou mais "Pull requests".</p>
+      <ol>
+        <li>Clicar no ícone do GitHub na barra à esquerda do VSCode</li>
+        <li>
+          Clicar em Iniciar Repositório (equivale a <code>$ git init</code>).
+          Essa ação leva para os arquivos e mostra a letra <strong>U</strong> ao
+          lado deles (U = untracked)
+        </li>
+        <li>
+          Colocar o cursor sobre CHANGES e clicar em + para Stage Changes. Vai
+          aparecer a letra <strong>A</strong> ao lado dos arquivos e de CHANGES
+          muda para STAGED CHANGES e uma caixa de texto acima dele, para
+          escrever o nome do commit.
+        </li>
+        <li>
+          Preencha a caixa com o nome do commit e tecle
+          <strong>CTRL + Enter</strong>
+        </li>
+        <li>
+          No GitBash entrar o comando <code>$ git shortlog</code> vai aparecer o
+          texto do commit inicial
+        </li>
+        <li>
+          Localize e abra no VSCode o arquivo <strong>id_rsa.pub</strong> que
+          está em <i>C://Usuários/NomeUsuário/.ssh</i> e cópie a sua chave
+          id_rsa.
+        </li>
+        <li>
+          Entre na sua conta GitHub, no canto superior direito clique na setinha
+          ao lado do seu avatar e escolha Settings, depois SSH and GPG keys,
+          depois no botão New SSH key
+        </li>
+        <li>
+          No campo Title dê um nome para a chave (Maujor@maujor) e no campo Key
+          cole a chave que você copiou
+        </li>
+        <li>
+          Clique em Add SSH key e vai pedir para você digitar e confirmar sua
+          senha GitHub.
+        </li>
+        <li>Confirme e sua chave estará cadastrada</li>
+        <li>
+          Ainda no GitHub no canto superior direito clique na setinha ao lado do
+          sinal + e depois em New repository
+        </li>
+        <li>
+          Escolha o nome do repositório, inclua opcionalmente uma descrição para
+          ele, e clique Create repository
+        </li>
+        <li>
+          Na tela seguinte copie o comando git remote add origin
+          https://github.com/Maujor/vscode-github.git
+        </li>
+        <li>
+          No GitBash cole o comando $ git remote add origin
+          https://github.com/Maujor/vscode-github.git
+        </li>
+        <li>No VSCode no menu do ícone GitHub clique em ... Push to...</li>
+        <li>
+          Na caixa de texto menu drop down escolha origin
+          https://github.com/Maujor/vscode-github.git
+        </li>
+        <li>No GitHub os arquivos locais foram enviados</li>
+      </ol>
 
-  <h2>Setup inicial</h2>
+      <h2>Modificações locais</h2>
 
-
-  <ol>
-    <li>Clicar no ícone do GitHub na barra à esquerda do VSCode</li>
-    <li>Clicar em Iniciar Repositório (equivale a $ git init). Essa ação leva para os arquivos e mostra U ao lado deles
-      (untracked)</li>
-    <li>Colocar o cursor sobre CHANGES e clicar em + para Stage Changes. Vai aparecer um A ao lado dos arquivos e de
-      CHANGES muda para STAGED CHANGES e uma caixa de texto acima dele, para escrever o nome do commit.</li>
-    <li>Preencha a caixa com o nome do commit e tecle CTRL + Enter</li>
-    <li>No GitBash entrar o comando $ git shortlog vai aparecer o texto do commit inicial</li>
-    <li>Localize e abra no VSCode o arquivo id_rsa.pub que está em C://Usuários/NomeUsuário/.ssh e cópie a sua chave
-      id_rsa.</li>
-    <li>Entre na sua conta GitHub, no canto superior direito clique na setinha ao lado do seu avatar e escolha Settings,
-      depois SSH and GPG keys, depois no botão New SSH key</li>
-    <li>No campo Title dê um nome para a chave (Maujor@maujor) e no campo Key cole a chave que você copiou</li>
-    <li>Clique em Add SSH key e vai pedir para você digitar e confirmar sua senha GitHub.</li>
-    <li>Confirme e sua chave estará cadastrada</li>
-    <li>Ainda no GitHub no canto superior direito clique na setinha ao lado do sinal + e depois em New repository</li>
-    <li>Escolha o nome do repositório, inclua opcionalmente uma descrição para ele, e clique Create repository</li>
-    <li>Na tela seguinte copie o comando git remote add origin https://github.com/Maujor/vscode-github.git
-    <li>No GitBash cole o comando $ git remote add origin https://github.com/Maujor/vscode-github.git</li>
-    <li>No VSCode no menu do ícone GitHub clique em ... Push to... </li>
-    <li>Na caixa de texto menu drop down escolha origin https://github.com/Maujor/vscode-github.git</li>
-    <li>No GitHub os arquivos locais foram enviados</li>
-  </ol>
-
-  <h2>Modificações locais</h2>
-
-  <ol>
-    <li>Modifica arquivo e salva aparece bolinha ícone GitHub</li>
-    <li>Clicar ícone aparece CHANGES e uma lista do(s) arquivo(s) modificados</li>
-    <li>Clicar no arquivo modificado mostra as modificações</li>
-    <li>Ao lado do arquivo modificado clicar em + para stage changes, preencher texto commit e teclar Ctrl + Enter</li>
-    <li>Na parte superior clicar ... Push to... e escolher a origin no drop down</li>
-    <li>Ver a modificação com o texto do commit no GitHub</li>
-  </ol>
-
-</body>
-
+      <ol>
+        <li>Modifica arquivo e salva aparece bolinha ícone GitHub</li>
+        <li>
+          Clicar ícone aparece CHANGES e uma lista do(s) arquivo(s) modificados
+        </li>
+        <li>Clicar no arquivo modificado mostra as modificações</li>
+        <li>
+          Ao lado do arquivo modificado clicar em + para stage changes,
+          preencher texto commit e teclar Ctrl + Enter
+        </li>
+        <li>
+          Na parte superior clicar ... Push to... e escolher a origin no drop
+          down
+        </li>
+        <li>Ver a modificação com o texto do commit no GitHub</li>
+      </ol>
+    </div>
+  </body>
 </html>
